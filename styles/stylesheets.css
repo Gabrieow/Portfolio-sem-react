@@ -10,8 +10,7 @@
 body{
     background-color: #A45DDB;
     width: 100%;
-    height: 5120px
-    
+    height: 5120px;
 }
 
 /* ------- CLASSES GLOBAIS ------- */
@@ -30,6 +29,17 @@ body{
 
     font-size: 1.1em;
     letter-spacing: 1px;
+}
+
+.quebralinha-curto{
+    display: flex;
+    height: 4px;
+    width: 350px;
+    background-color:#d3d3d3;
+    border: none;
+    align-items: center;
+    margin-left: 85px;
+    margin-bottom: 20px;
 }
 
 .letras-estilizadas-1{
@@ -62,6 +72,16 @@ body{
     color: #D3D3D3;
 }
 
+.letras-estilizadas-4{
+    font-family: 'Bayon', sans-serif;
+    letter-spacing: 5px;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    font-size: 60px;
+    color: #D3D3D3;
+    margin-left: 85px;
+}
 
 /* ------- BOTOES ------- */
 
@@ -103,6 +123,7 @@ body{
     align-items: center;
     justify-content: center;
     border: solid 1px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 
     10px 0 15px rgba(0, 0, 0, 0.100),
     -10px 0 15px rgba(0, 0, 0, 0.100),
@@ -110,8 +131,13 @@ body{
     0 -10px 15px rgba(0, 0, 0, 0.100);
 }
 
+.card-interativo-skills:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
 .card-interativo-projetos{
-    display: flex;
     width: 450px;
     height: 440px;
     background-color: #d3d3d3ee;
@@ -160,7 +186,7 @@ header{
         0 4px 6px rgba(0, 0, 0, 0.3), /* Sombra principal abaixo */
         0 -4px 6px rgba(255, 255, 255, 0.1); /* Sombra superior para efeito de relevo */
     border-bottom: 1px solid #6A0DAD; /* Linha sutil para destacar o efeito */
-    position: fixed;
+    position:fixed;
     background-color: #A45DDB;
 }
 
@@ -349,7 +375,7 @@ header nav {
 
 /* ------- CARD PROJETOS ------- */
 
-.card-projetos.div{
+.card-projetos-div{
     margin-top: 75px;
 }
 
@@ -360,6 +386,7 @@ header nav {
     gap: 25px;
 }
 
+/* -- HEADER -- */
 .card-projetos-header{
     display: flex;
     width: 100%;
@@ -367,20 +394,113 @@ header nav {
     align-items: center;
     gap: 15px;
     margin-left: 15px;
+    margin-bottom: 7px;
 }
 
 .card-projetos-imagem-header{
     display: flex;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
+    object-fit: cover;
     
 }
 
 .card-projetos-titulo{
     display: flex;
     align-items: center;
+    color:#6A0DAD;
+    font-weight: bold;
 }
 
+.card-projetos-subtitulo{
+    font-size: 0.9em;
+    font-weight: bold;
+    color:rgba(0, 0, 0, 0.658);
+    margin-top: 5px;
+}
+
+/* -- CORPO -- */
+
+.card-projetos-corpo{
+    position: relative;
+    width: 100%;
+    height: 330px;
+}
+
+.card-projetos-corpo-img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+/* -- OVERLAY -- */
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 330px;
+    background: rgba(0, 0, 0, 0.103); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(5px); /* Dá um leve blur */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card-titulo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Subtítulo */
+.card-subtitulo {
+    font-size: 1em;
+    max-width: 80%;
+}
+
+/* Tecnologias utilizadas */
+.card-tecnologias {
+    display: flex;
+    gap: 10px;
+}
+
+.card-tecnologias img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(100%);
+}
+
+/* Remove o efeito ao passar o mouse */
+.card-interativo-projetos:hover .card-overlay {
+    opacity: 0;
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+.card-interativo-projetos:hover .card-projetos-corpo-img {
+    filter: brightness(100%);
+    transform: scale(1.1);
+}
+
+/* -- FILEIRAS -- */
+
+.card-projetos-fila1, .card-projetos-fila2, .card-projetos-fila3{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 25px;
+    margin-top: 25px;
+}
 
 /* ------- CONTATO ------- */
