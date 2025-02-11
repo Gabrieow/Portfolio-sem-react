@@ -10,7 +10,7 @@
 body{
     background-color: #A45DDB;
     width: 100%;
-    height: 5120px;
+    height: 100%;
 }
 
 /* ------- CLASSES GLOBAIS ------- */
@@ -83,6 +83,26 @@ body{
     margin-left: 85px;
 }
 
+.letras-estilizadas-5{
+    font-family: 'Bayon', sans-serif;
+    letter-spacing: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 30px;
+    color: #D3D3D3;
+}
+
+.letras-estilizadas-6{
+    font-family: 'Bayon', sans-serif;
+    letter-spacing: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    color: #D3D3D3;
+}
+
 /* ------- BOTOES ------- */
 
 .toggle-menu, .language-selection, .theme-switch{
@@ -149,6 +169,29 @@ body{
     0 -10px 15px rgba(0, 0, 0, 0.100);
 }
 
+.card-interativo-contato{
+    display: flex;
+    width: 175px;
+    height: 175px;
+    background-color: #d3d3d3ee;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px;
+    border-radius: 100%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 
+    10px 0 15px rgba(0, 0, 0, 0.100),
+    -10px 0 15px rgba(0, 0, 0, 0.100),
+    0 10px 15px rgba(0, 0, 0, 0.100),
+    0 -10px 15px rgba(0, 0, 0, 0.100);
+}
+
+.card-interativo-contato:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
 /* ------- FOTOS ------- */
 
 /* BOTOES */
@@ -180,6 +223,7 @@ header{
     width: 100%;
     height: 70px;
     display: flex;
+    z-index: 1000;
     justify-content: space-between;
     align-items: center;
     box-shadow: 
@@ -455,6 +499,7 @@ header nav {
     color: white;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    z-index: 10;
 }
 
 .card-titulo {
@@ -504,3 +549,17 @@ header nav {
 }
 
 /* ------- CONTATO ------- */
+
+.contato-div{
+    width: 100%;
+    height: 800px;
+    margin-top: 120px;
+}
+
+.contato-div-up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 120px;
+}
